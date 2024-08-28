@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../../static/css/appoinment_booking.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Passions+Conflict&family=Roboto&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+    <!-- From here same lang html and css sa adminpg.html -->
+
+        <!-- di ko sure how this work so i opted to make it a comment muna -->
+        {% if request.user.is_authenticated %}
+        <!-- <div id="content", name="content"></div> = ito yung naka wrap sa buong content -->
+
+            <!-- HEADER -->
+            <!-- HEADER -->
+            <!-- <header class="header">
+                
+
+                <div class="header-icons">
+                    <div class="account">
+                    <h4>{{user.user_name}}</h4>
+                    </div>
+                </div>
+
+            </header> -->
+
+
+            <!-- LEFT SIDEBAR (categories) -->
+            <div class="grid-container">
+                <div class="grid-item-1">
+                    <!-- LEFT SIDEBAR (categories) -->
+                    <section class="L-sidebar">
+                        <nav class="L-sidebar-nav">
+                            <span>LashTech</span>
+                                    <!-- nagf fle not found kaya ganyan ko muna link -->
+                                    <a href=""><i class='bx bxs-dashboard'></i>Dashboard</a>
+                                    <a href="/admin" class="active"><i class='bx bx-user'></i>Users</a>
+                                    <a href="/appointment_booking"><i class='bx bx-crown' ></i>Bookings</a>
+                                    <a href="/signout"><i class='bx bx-log-out'></i>Signout</a>
+                                    <!-- di ko ma-connect yung sign out page?? -->
+                        </nav>
+                    </section>
+                </div>
+            
+            <!-- HEADER -->
+
+                <div class="grid-item-2">
+                    <header class="header">
+                        {% csrf_token %}
+                     </header>
+                </div>
+                            
+            <!-- MAIN BODY -->
+            <div class="grid-item-3">
+                <!-- ACCOUNTS -->
+                <div class="bottom-card">
+    
+                    <div class="acc-table">
+                        <h2>Appointment Bookings</h2>
+
+                    <span>Booking Application - {{ nnotverified_booking }}</span>
+
+                </div>
+
+
+                <table>
+                    <thead>
+                        <tr>
+                        <div class="list1">
+                        <th>#</th>
+                        <th>Full Name</th>
+                        <th>Contact No.</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for data in booking %}
+                        <tr>
+                            <td>{{data.id}}</td>
+                            <td>{{data.full_name}}</td>
+                            <td>{{data.contact_no}}</td>
+                            <td>{{data.start_date}}</td>
+                            <td>{{data.user_time}}</td>
+
+                            <td>
+                                <button type="button"> 
+                                    <a href="{% url 'booking_view' data.id %}"> View All Info</a>
+                                </button>
+                                
+                                <button type="button"> 
+                                    <a href="{% url 'appointment_booking_accept' data.id %}" onclick="return confirm('Are you sure you want to ACCEPT the membership application?');"> Accept</a>
+                                </button>
+                            </td>
+                            </div>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <!-- ACCOUNTS -->
+               
+                <!-- Booking Application Accept -->
+                <div class="table-title">
+
+                    <span>Booking Accepted - {{ nverified_booking }}</span>
+
+                </div>
+
+
+                <table class="accepted-table">
+                    <thead>
+                        <tr>
+                        <div class="list1">
+                        <th>#</th>
+                        <th>Full Name</th>
+                        <th>Contact No.</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for data in booking_accepted %}
+                        <tr>
+                            <td>{{data.id}}</td>
+                            <td>{{data.full_name}}</td>
+                            <td>{{data.contact_no}}</td>
+                            <td>{{data.start_date}}</td>
+                            <td>{{data.user_time}}</td>
+
+                            <td>
+                                <button type="button"> 
+                                    <a href="{% url 'booking_view' data.id %}"> View All Info</a>
+                                </button>
+                                
+                            </td>
+                            </div>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                
+
+
+                <!-- One Day Notification -->
+                <div class="table-title">
+
+                        <!-- Monthly Application -->
+                        <form method="POST" action="{% url 'allsendemail' %}">
+                            {% csrf_token %}
+                            <div class="one-table">
+                                <h2>One Day Remaining</h2><button type="submit">Send Email</button>
+                            </div>
+                        </form>
+                        <!-- 1 Day Remaining Booking -->
+                        <div class="table-title">
+                            <span>Appointment Booking - {{ nbooking_notification }}</span>
+                        </div>
+                        
+                        <table>
+                            <thead>
+                                <tr>
+                                <th>#</th>
+                                <th>Full Name</th>
+                                <th>Start Date</th>
+                                <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for data in booking_notification %}
+                                <tr>
+                                    <td>{{data.id}}</td>
+                                    <td>{{data.full_name}}</td>
+                                    <td>{{data.start_date}}</td>
+                                    <td>
+                                        <button type="button">
+                                            <a href="{% url 'booking_view' data.id %}">View All Info</a>
+                                        </button> 
+                                        
+                                        <button type="button"> 
+                                            <a href="{% url 'bookingsendemail' data.id %}" onclick="return confirm('Are you sure you want to SEND EMAIL?');">Send Email</a>
+                                        </button>
+                                        
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <!-- 3 Days Remaining Monthly -->
+                </div>
+            </main>
+		{%  endif %}
+        <script src="../../static/js/membershipapplication.js"></script>
+    </body>
+</html>

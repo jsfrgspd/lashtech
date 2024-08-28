@@ -1,0 +1,549 @@
+/* CSS for index.html */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #efeeee;
+}
+
+/* Main container */ 
+
+.grid_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "landing landing landing"
+        "services services services"
+        "features features features"
+        "nearby nearby nearby"
+        "about about about";
+}
+
+/* Landing Section */
+
+.landing_container {
+    grid-area: landing;
+    background: url("../images/curvys.png");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.nav_container ul {
+    display: flex;
+    flex-direction: row;
+    gap: 0 3rem;
+    padding: 2rem 0 1rem 10rem;
+    list-style-type: none;
+    position: relative;
+    z-index: 1;
+}
+
+.nav_container ul li a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    color: black;
+}
+
+/* Style for Landing */
+
+.landing_content_container {
+    display: flex;
+    height: 100vh;
+}
+
+.landing_content_container .description p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.125rem;
+    padding-right: 7rem;
+    text-align: justify;
+    line-height: 2;
+    position: relative;
+    z-index: 1;
+    margin-top: .18rem;
+}
+
+.landing_content_container .description h3 {
+    font-family: 'Passions Conflict', cursive;
+    font-size: 6.875rem;
+    margin-top: 14rem;
+    position: relative;
+    z-index: 1;
+}
+
+.landing_content_container .description h3 , .landing_content_container p, .landing_button {
+    padding-left: 10rem;
+}
+
+.landing_button {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 2rem;
+}
+
+.landing_button button:nth-child(1){
+    background: #343A40;
+    width: 11.813em;
+    padding: 8px 0;
+    margin-right: 2rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    border-radius: 2.5px;
+}
+
+.landing_button button:nth-child(1):hover {
+    background: #131518;
+    transition: 0.3s;
+}
+
+.landing_button button:nth-child(2) {
+    cursor: pointer;
+    stroke: #343A40;
+    border: 2px solid #000;
+    width: 11.813em;
+    padding: 8px 0;
+    position: relative;
+    z-index: 1;
+    border-radius: 2.5px;
+    background: transparent;
+}
+
+.landing_button button:nth-child(2):hover {
+    background: #ffffff;
+    transition: 0.3s;
+}
+
+.landing_button button:nth-child(1) a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.landing_button button:nth-child(2) a {
+    font-weight: 600;
+    text-decoration: none;
+    color: #000;
+} 
+
+
+.description {
+    align-items: center;
+    justify-content: center;
+}
+
+.cover_img {
+    align-items: center;
+    justify-content: center;
+
+}
+
+.cover_img img:nth-child(1) {
+    object-fit: cover;
+    width: 50vw;
+    height: 85vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    margin-left: .8rem;
+}
+
+.cover_img img:nth-child(2) {
+    object-fit: cover;
+    width: 130vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+}
+
+/* Style for Service */
+
+.services_container {
+    grid-area: services;
+}
+
+.line-with-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh; 
+}
+        
+.line {
+    width: 10rem;
+    height: 3px;
+    background: #FF8FAB;
+    margin: 0 10px; 
+}
+        
+.text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #343A40;
+    text-transform: uppercase;
+}
+
+.services_img {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.box {
+    flex: 1;
+    max-width: 25rem;
+    margin: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.box:hover {
+    filter: brightness(60%); /* Adjust the brightness of images in */
+    cursor: pointer;
+}
+
+.box img {
+    max-width: 100%;
+    height: 600px;
+    object-fit: cover;
+    opacity: 1.2;
+    filter: brightness(50%);
+}
+
+.features_container .box_features:nth-child(3) img {
+    width: 65rem;
+}
+
+.box_content {
+    position: absolute;
+    bottom: 0;
+    text-align: left;
+    margin: 0 0 3rem 2.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.box_content h4 {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #100D0D;
+    text-transform: uppercase;
+    padding-bottom: 1.2rem;
+}
+
+.box_content p {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 2.5;
+    margin-bottom: 2.5rem;
+}
+
+.box_content a {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #FF8FAB;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+.services_container .services_img .box:nth-child(2) img {
+    width: 100%;
+}
+
+/* Style for Features */
+
+.features_container {
+    grid-area: features;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the boxes horizontally */
+    margin: 10rem 0;
+    position: relative;
+}
+
+.features_container::before,
+.features_container::after {
+    content: "";
+    width: 1rem; /* Adjust the width of the vertical bars as needed */
+    background-color: #FDDEDF; /* Adjust the background color of the vertical bars */
+    height: 70%; /* Make the bars cover the full height of the container */
+    position: absolute;
+    top: 18%;
+}
+
+.features_container::before {
+    left: 0; /* Vertical bar on the left */
+}
+
+.features_container::after {
+    right: 0; /* Vertical bar on the right */
+}
+
+.box_features {
+    flex: 1;
+    max-width: 20rem;
+    margin: 2.5rem; /* Reduce the margin between boxes */
+    text-align: center; /* Center the content horizontally */
+}
+
+.box_features img {
+    max-width: 100%;
+    height: 15rem;
+    position: relative;
+}
+
+.features_container .box_features:nth-child(4) img {
+    width: 20rem;
+}
+
+.line_img {
+    border-top: 1px solid #000; /* Style and color of the line */
+    margin: 2rem 0 0 1rem;
+    width: 80%;
+    position: relative;
+    left: 5%;
+    top: 0;
+}
+
+.box_features_content h5 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    color: #343A40;
+    margin-top: 1rem;
+    padding: 10px;
+}
+
+.box_features_content p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+    color: #343A40;
+    line-height: 2.5;
+    text-align: justify;
+    padding: 0 2rem;
+}
+
+/* Style for Nearby */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 98.8vw;
+}
+
+.nearby_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    margin-bottom: 2rem;
+    width: 70%; /* Adjust the container width as needed */
+}
+
+.item_header {
+    grid-column: span 3;
+}
+
+.item_header h5 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #343A40;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.item_header h5::before, .item_header h5::after {
+    content: "";
+    width: 20%;
+    background-color: #f18a8d;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+}
+
+.item_header h5::before {
+    left: 15%;
+}
+
+.item_header h5::after {
+    right: 15%;
+}
+.item {
+    width: 20rem;
+    position: relative;
+    margin-left: 2rem;
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.item img:hover {
+    filter: brightness(50%);
+    cursor: pointer;
+}
+
+/* Style for text within grid items */
+.item_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 2px 15px;
+    background: rgba(#110F0F, #110F0F, #110F0F, 0.5);
+    position: absolute;
+    top: 70%;
+    left: 0;
+    right: 0;
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.item:nth-child(4) img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1/1; /* Add this property to make it the same size as others */
+    object-fit: cover;
+}
+
+.item_content span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #FDDEDF;
+}
+
+.item_content span:nth-child(2) {
+    font-size: 0.7rem;
+    text-indent: 5px;
+}
+
+/* Media query for responsive layout */
+@media (max-width: 768px) {
+    .nearby_container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust the column width for smaller screens */
+        grid-template-rows: auto; /* Reset rows for smaller screens */
+    }
+}
+
+/* Style for About Us */
+.about_container {
+    grid-area: about;
+    background: url("../images/bga.png");
+    background-size: cover;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.about_content {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10rem;
+    position: relative;
+    top: 25%;
+}
+
+.about_content h5 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    color: #343A40;
+    position: relative;
+    text-indent: 1.8em;
+}
+
+.about_content h5::before {
+    content: "";
+    width: 5%;
+    background-color: #f18a8d;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Adjusted to 0 to account for the padding */
+    transform: translate(-20%, -50%); /* Center the ::before element vertically */
+}
+
+
+.about_content p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #343A40;
+    text-align: justify;
+    padding-top: 1rem;
+    padding-right: 5rem;
+    line-height: 2;
+}
+
+.about_cover {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about_cover img {
+    object-fit: contain;
+    aspect-ratio: 1 / 1;
+}
+
+.about_cover img:nth-child(1) {
+    width: 50%;
+    height: 80vh;
+    position: relative;
+    left: 15%;
+}
+
+.about_cover img:nth-child(2) {
+    width: 24%;
+    height: 60vh;
+    position: absolute;
+    left: 50%;
+}
+
+/* Style for footer */
+footer {
+    background: #343A40;
+    height: 35vh;
+}
+
+footer p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.7rem;
+    color: #FDDEDF;
+    padding: 5rem 11rem;
+}
+
+footer hr {
+    width: 80%;
+    border: 1px solid #FDDEDF;
+    position: relative;
+    left: 10%;
+}
+
+.socials {
+    margin-top: 1.5rem;
+    padding-right: 9rem;
+    display: flex;
+    justify-content: flex-end;
+    letter-spacing: 2rem;
+}
+
+.socials i {
+    font-size: 1.5rem;
+    color: #FDDEDF;
+}
+

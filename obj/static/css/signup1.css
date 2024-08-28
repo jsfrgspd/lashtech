@@ -1,0 +1,131 @@
+/* CSS for register.html */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fddedf !important;
+    padding: 0;
+    margin: 0;
+}   
+
+.flex_container {
+    display: flex;
+    gap: 0 0;
+    margin: 4.5% 15%;
+}
+
+.sub_main1 {
+    flex-wrap: 1;
+    min-width: 50%;
+}
+
+.sub_main1 .img_container img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    height: 80vh;
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.sub_main2 {
+    flex-wrap: 1;
+    min-width: 50%;
+    height: 80vh;
+    background: #FFFFFF;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.sub_main2 nav {
+   margin-top: 2rem;
+   margin-left: 4rem;
+}
+
+.sub_main2 nav ul li{
+    list-style-type: none;
+    display: inline-block;
+}
+
+.sub_main2 nav ul li a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #343A40;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.sub_main2 nav ul li:nth-child(1) a {
+    margin-right: 1.5rem;
+}
+
+.sub_main2 .img-register-2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.sub_main2 .img-register-2 img {
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    height: 30vh;
+    width: auto;
+}
+
+
+.form_container {
+    margin: 2rem 2rem 2rem 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.form_container input[type="email"],
+.form_container input[type="username"],
+.form_container input[type="password"],
+.form_container input[type="confirm"] {
+    width: 55.99%;
+    padding: 8px 0px; /* Adjust the top and bottom padding as needed */
+    margin-bottom: 1rem;
+    border: none;
+    border-bottom: 2px solid #000000; 
+    outline: none;
+}
+
+input[type="email"]::placeholder,
+input[type="username"]::placeholder,
+input[type="password"]::placeholder,
+input[type="confirm"]::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.625rem;
+    font-weight: 400;
+    opacity: 1;
+    padding-left: 0.7rem;
+}
+
+.form_container input[type="submit"] {
+    background-color: #E99093;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.submit_button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15rem;
+}

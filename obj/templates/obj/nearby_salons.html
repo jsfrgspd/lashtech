@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Nearby salons</h1>
+
+    <ul>
+        {% for salon in salons %}
+            <li>
+                <h2>{{ salon.name }}</h2>
+                <p>{{ salon.address }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
